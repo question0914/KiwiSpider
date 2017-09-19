@@ -1,0 +1,22 @@
+<div ng-controller="Inside_YourAccount_Controller as inside">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<span><a ng-click="$parent.load_your_acc()">Your Account</a></span>
+			<span title="Edit Your Account" class="pull-right" ng-click="inside.editAccount()"><span class="glyphicon glyphicon-edit text-primary"></span></span>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<tr>
+					<th>Name</th>
+					<th>Account Id</th>
+					<th>Email</th>
+				</tr>
+				<tr>
+					<td ng-bind="$root.your_acc.name"></td>
+					<td ng-bind="$root.your_acc.id"></td>
+					<td ng-bind="$root.your_acc.email"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

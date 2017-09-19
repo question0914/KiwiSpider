@@ -1,0 +1,36 @@
+<div ng-controller="Inside_Your_TaskController as inside">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<span><a ng-click="inside.load_your_task()">Your Task</a></span>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<tr>
+					<th>Task Name</th>
+					<th>Creater</th>
+					<th>Project</th>
+					<th>Due Date</th>
+					<th>Description</th>
+					<th>Comment</th>
+					<th>Priority</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+				<tr ng-repeat="task in $root.your_tasks">
+					<td ng-bind="task.name"></td>
+					<td ng-bind="task.creater_name"></td>
+					<td ng-bind="task.project_name"></td>
+					<td ng-bind="task.due_date"></td>
+					<td ng-bind="task.description"></td>
+					<td ng-bind="task.comments"></td>
+					<td ng-bind="task.priority"></td>
+					<td ng-bind="task.status"></td>
+					<td><a ng-show="'<%task.status%>' !='Complete'" ng-click="inside.complete(task)" title="Make Complete"><span class="glyphicon glyphicon-ok"></span></a>
+						<a ng-click="inside.remove(task)" title="Remove"><span class="glyphicon glyphicon-remove"></span></a>
+						<a ng-click="inside.edit(task)" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>	
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
